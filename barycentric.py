@@ -21,9 +21,9 @@ def get_cartesian_coordinates(triangle_coordinates: ndarray, barycentric_coordin
     return np.array([x, y])
 
 def is_inside_triangle(triangle_coordinates: ndarray, point_coordinates: np.ndarray) -> bool:
+    lams = get_barycentric_coordinates(triangle_coordinates, point_coordinates)
 
-
-    if lam_1 > 0 and lam_2 > 0 and lam_3 > 0:
+    if  lams[0] > 0 and lams[1] > 0 and lams[2] > 0:
         return True
     else:
         return False
